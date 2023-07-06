@@ -199,7 +199,7 @@ Maaslin2_wrapper <- function(feature_abd,
 #' @keywords internal
 rename_maaslin <- function(old_names, prefix) {
   if(is.null(old_names) | length(old_names) == 0) return(NULL)
-  new_names <- paste0(prefix, seq_along(old_names))
+  new_names <- make.names(old_names)
   names(new_names) <- old_names
   return(new_names)
 }
